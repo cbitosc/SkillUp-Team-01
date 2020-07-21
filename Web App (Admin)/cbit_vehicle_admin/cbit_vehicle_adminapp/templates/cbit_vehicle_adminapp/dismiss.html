@@ -1,0 +1,65 @@
+{% extends 'cbit_vehicle_adminapp/base.html' %}
+{% load static %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+             <img src="{% static 'images/image4.png '%}" alt="logo" style="width:30px;">
+            </a>
+
+            <center><h5><b>Dismiss Vehicles</b></h5></center>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li>
+                  <form class="form-inline my-2 my-lg-0" action="{% url 'login' %}">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+        </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      <br>
+
+      <h5 style="color:red;text-align:center"><u>Dismissal Of Vehicles</u></h5><br>
+
+              <form action="dismiss3" method="get">
+                  {% csrf_token %}
+              <center><h5>Enter the registration_id :
+                                     <input type="number"  name="reg_id" class="col-3" style="font-size:15px;"></h5><h6><input type="submit"></h6> <br></center>
+
+              </form>
+<br>
+            {% for i in details %}
+            <b><h5>Details of User with Reg_ID:{{i.reg_id}}</h5></b>
+                    <ul style="color:black;">
+                    <li>Name= {{i.full_name}}</li>
+                    <li>Branch={{i.branch_name}}</li>
+                    <li>User_id={{i.user_id}}</li>
+                    <li>Licence Number={{i.licence_no}}</li>
+                    <li>Vehicle Number={{i.vehicle_no}}</li>
+                    <li>Vehicle Type={{i.vehicle_type}}</li>
+                    </ul>
+
+                    <form action="dismiss" method="get">
+                        {% csrf_token %}
+                    <center><button name="reg_id" type="submit" value="{{i.reg_id}}" onclick="return confirm('Are you sure you want to dismiss?');">dismiss</button></center>
+                  </form>
+                    {%endfor%}
+
+
+            {% for message in messages%}
+            <script>
+              alert("{{message}}");
+            </script>
+       {% endfor %}
+<br><br>
+             <form class="form-inline my-2 my-lg-0" action="{% url 'dismiss2' %}"  method="post">
+               {% csrf_token %}
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">>>list of dismissed vehicles</button>
+             </form>
+
+
+{% endblock %}

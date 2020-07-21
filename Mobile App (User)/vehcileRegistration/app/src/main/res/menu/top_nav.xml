@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/notificationsitem"
+        android:icon="@drawable/ic_baseline_notifications_24"
+        android:title="Notifications"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/overflowitem"
+        android:icon="@drawable/ic_baseline_more_vert_24"
+        android:title="Overflowmenu"
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/settingsitem"
+                android:icon="@drawable/ic_baseline_settings_24"
+                android:title="Settings"/>
+
+            <item
+                android:id="@+id/feedbackitem"
+                android:icon="@drawable/ic_baseline_feedback_24"
+                android:title="Feedback"/>
+
+            <item
+                android:id="@+id/logoutitem"
+                android:icon="@drawable/ic_baseline_call_made_24"
+                android:title="Logout"/>
+
+        </menu>
+
+    </item>
+
+
+</menu>

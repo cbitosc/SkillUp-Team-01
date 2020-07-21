@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeitem"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/additem"
+        android:icon="@drawable/ic_baseline_add_box_24"
+        android:title="Add"/>
+
+    <item
+        android:id="@+id/deleteitem"
+        android:icon="@drawable/ic_baseline_delete_24"
+        android:title="Delete"/>
+
+    <item
+        android:id="@+id/applyitem"
+        android:icon="@drawable/ic_baseline_card_membership_24"
+        android:title="Apply"/>
+
+</menu>
